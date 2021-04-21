@@ -1,0 +1,33 @@
+﻿@model List<CRUD.Models.ViewModels.TablaViewModel>
+@{
+    ViewBag.Title = "Mi conexion de datos";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row" style="text-align:center;padding:5px">
+    <a href="~/Tabla/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table-responsive">
+            <tr>
+                <th>Id Curso</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Habilitado</th>
+            </tr>
+            @foreach (var lst_bmv in Model)
+            {
+        <tr>
+            <td>@lst_bmv.idCurso</td>
+            <td>@lst_bmv.nombre</td>
+            <td>@lst_bmv.descripcion</td>
+            <td>@lst_bmv.bhabilitado</td>
+            <td><a href="~/Tabla/Editar/@lst_bmv.idCurso" class="btn btn-default">Editar</a></td>
+            <td><a href="~/Tabla/Eliminar/@lst_bmv.idCurso" class="btn btn-danger">Borrar</a></td>
+        </tr>
+            }
+        </table>
+    </div>
+</div>

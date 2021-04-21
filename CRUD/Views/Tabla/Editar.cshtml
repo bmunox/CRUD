@@ -1,0 +1,25 @@
+﻿@model CRUD.Models.ViewModels.NuevoViewModel
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("Editar", "Tabla", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.LabelFor(d => d.idCurso)
+            @Html.TextBoxFor(d => d.idCurso, "", new { @class = "form-control" })
+            @Html.LabelFor(d => d.nombre)
+            @Html.TextBoxFor(d => d.nombre, "", new { @class = "form-control" })
+            @Html.LabelFor(d => d.descripcion)
+            @Html.TextBoxFor(d => d.descripcion, "", new { @class = "form-control" })
+            @Html.LabelFor(d => d.bhabilitado)
+            @Html.TextBoxFor(d => d.bhabilitado, "", new { @class = "form-control" })
+            <div style=" text-align:center;padding:5px">
+                <input type="submit" class="btn btn-primary" name="guardar" value="guardar" />
+            </div>
+        </div>
+    </div>
+}
+
